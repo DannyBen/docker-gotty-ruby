@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  gotty:
+    build: .
+    ports: ["3000:3000"]
+    <<: &default
+      image: dannyben/gotty-ruby
+      volumes:
+      - "./app:/app"
+      - "./files/home:/root"
+
+  bash:
+    <<: *default
+    entrypoint: bash
+
