@@ -11,7 +11,7 @@ RUN wget $GOTTY_BINARY -O gotty.tar.gz && \
     rm gotty.tar.gz && \
     chmod +x /usr/local/bin/gotty
 
-RUN apk --no-cache add bash
+RUN apk --no-cache add build-base bash
 
 COPY files/home/* /root/
 
